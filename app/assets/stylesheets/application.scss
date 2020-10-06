@@ -1,0 +1,22 @@
+@import "bulma/bulma";
+@import "./**/*";
+
+
+.navbar.is-orange {
+    background-color:#ef6537;
+    font-weight: bold;
+}
+
+.navbar-item.is-color-black {
+    color: #000000
+}
+
+.logo {
+    border: 1px white solid;
+    font-size: 23px;
+    margin: 5px;
+    width: 28px;
+    text-align: center;
+    color: #ffffff;
+    font-weight: bold;
+}
