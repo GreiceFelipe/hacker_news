@@ -1,0 +1,25 @@
+<div class="card">
+        <div class="card-content">
+            <p class="title is-4">
+                <%= title %>
+            </p>
+            <p class="subtitle is-6 is-underline">
+                <%= "by #{author} #{date}" %>
+            </p>
+            <br>
+            <p class="black-subtitle"><%= "#{comments.size} #{'comment'.pluralize(comments.size)} "%></p>
+            <br>
+            <a class="orange-subtitle" onclick="showHideComment('comment-1', 'button-1')" href="javascript:;" id="button-1">+Show most relevant comments</a>
+        </div>
+        <div class="card-content" id="comment-1" style="display: none;">
+            <% comments.each do |comment|%>
+                <p class="subtitle is-6 is-underline">
+                    <%= "by #{comment[:author]} #{comment[:date]}" %>
+                </p>
+                <p>
+                    <%= comment[:body] %>
+                <p>
+            <% end %>
+        </div>
+    </div>
+    <br>
