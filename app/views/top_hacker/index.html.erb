@@ -2,10 +2,14 @@
 <div class="gray-card">
     <h1 class="orange-title">Top 15 Hacker News</h1>
     <br>
-    <%= render partial: 'card', locals: { 
-            comments: [{author: 'kyuudou', date: '10/02/2020 15:30', body: "Did not know VxWorks is so prominent in space programs. I'm used to seeing it when trying to talk to backend storage arrays and the like."}],
-            title: 'Definitely not Windows 98: What operating systems keep things running in space?',
-            author: 'dguo',
-            date: '10/02/2020 09:44' 
-        } %>
+    <% @top_hackers.each_with_index do |top_hacker, index| %>
+        <%= render partial: 'card', locals: { 
+                comments: top_hacker[:comments],
+                title: top_hacker[:title],
+                author: top_hacker[:author],
+                date: top_hacker[:date],
+                id: index,
+                url:  top_hacker[:url]
+            } %>
+    <% end %>
 </div>

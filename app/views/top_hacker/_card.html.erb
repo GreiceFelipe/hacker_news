@@ -1,25 +1,30 @@
 <div class="card">
         <div class="card-content">
             <p class="title is-4">
-                <%= title %>
+                <a class="is-color-black" href="<%= url %>"> <%= title %> </a>
             </p>
             <p class="subtitle is-6 is-underline">
                 <%= "by #{author} #{date}" %>
             </p>
             <br>
-            <p class="black-subtitle"><%= "#{comments.size} #{'comment'.pluralize(comments.size)} "%></p>
-            <br>
-            <a class="orange-subtitle" onclick="showHideComment('comment-1', 'button-1')" href="javascript:;" id="button-1">+Show most relevant comments</a>
-        </div>
-        <div class="card-content" id="comment-1" style="display: none;">
-            <% comments.each do |comment|%>
-                <p class="subtitle is-6 is-underline">
-                    <%= "by #{comment[:author]} #{comment[:date]}" %>
-                </p>
-                <p>
-                    <%= comment[:body] %>
-                <p>
+            <% if comments.present? %>
+                <p class="black-subtitle"><%= "#{comments.size} #{'comment'.pluralize(comments.size)} "%></p>
+                <br>
+                <a class="orange-subtitle" onclick="showHideComment('comment-<%= id %>', 'button-1')" href="javascript:;" id="button-<%= id %>">+Show most relevant comments</a>
             <% end %>
         </div>
+        <% if comments.present? %>
+            <div class="card-content" id="comment-<%= id %>" style="display: none;">
+                <% comments.each do |comment|%>
+                    <p class="subtitle is-6 is-underline">
+                        <%= "by #{comment[:author]} #{comment[:date]}" %>
+                    </p>
+                    <p>
+                        <%= comment[:body] %>
+                    <p>
+                    <br>
+                <% end %>
+            </div>
+        <% end %>
     </div>
     <br>
