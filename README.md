@@ -1,24 +1,22 @@
-# README
+# Hacker News
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![Hacker News layout](https://github.com/GreiceFelipe/hacker_news/blob/main/HackerNewsLayout.png)
 
-Things you may want to cover:
+* Ruby version 2.6.3
 
-* Ruby version
+* Rails version 6.0.3
 
-* System dependencies
+### Configurações
 
-* Configuration
+Para instalar todas as dependências do rails:
 
-* Database creation
+```
+bundle
 
-* Database initialization
+```
 
-* How to run the test suite
+Para instalar todas as dependências do node:
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+yarn install --check-files
+```
